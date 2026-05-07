@@ -161,9 +161,17 @@ export default function Home() {
                   <span className="badge">入门推荐</span>
                   <h3>清爽基础洗</h3>
                   <p>适合定期到店、日常清洁维护。</p>
-                  <div className="price">
-                    <strong>98</strong>
-                    <span>元起</span>
+                  <div className="price-comparison">
+                    <div className="price-row member">
+                      <span>会员价</span>
+                      <strong>88</strong>
+                      <em>元起</em>
+                    </div>
+                    <div className="price-row regular">
+                      <span>普通价</span>
+                      <strong>98</strong>
+                      <em>元起</em>
+                    </div>
                   </div>
                   <ul className="features">
                     <li>基础洗澡与吹干</li>
@@ -177,9 +185,17 @@ export default function Home() {
                   <span className="badge">门店热卖</span>
                   <h3>绵密香香洗护</h3>
                   <p>适合毛量较大、追求蓬松柔顺和除味效果的宠物。</p>
-                  <div className="price">
-                    <strong>168</strong>
-                    <span>元起</span>
+                  <div className="price-comparison">
+                    <div className="price-row member">
+                      <span>会员价</span>
+                      <strong>148</strong>
+                      <em>元起</em>
+                    </div>
+                    <div className="price-row regular">
+                      <span>普通价</span>
+                      <strong>168</strong>
+                      <em>元起</em>
+                    </div>
                   </div>
                   <ul className="features">
                     <li>深层洁净与双重护毛</li>
@@ -193,9 +209,17 @@ export default function Home() {
                   <span className="badge">颜值进阶</span>
                   <h3>洗护加造型</h3>
                   <p>适合准备拍照、过节、聚会或品种造型维护。</p>
-                  <div className="price">
-                    <strong>258</strong>
-                    <span>元起</span>
+                  <div className="price-comparison">
+                    <div className="price-row member">
+                      <span>会员价</span>
+                      <strong>228</strong>
+                      <em>元起</em>
+                    </div>
+                    <div className="price-row regular">
+                      <span>普通价</span>
+                      <strong>258</strong>
+                      <em>元起</em>
+                    </div>
                   </div>
                   <ul className="features">
                     <li>完整洗护护理流程</li>
