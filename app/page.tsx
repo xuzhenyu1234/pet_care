@@ -107,23 +107,29 @@ export default function Home() {
                   <p>从基础洗护到精修造型，再到换季护理，我们把每一步做细，也把每一只宠物的情绪照顾到位。</p>
                 </div>
               </div>
-              <div className="cards">
-                <article className="card fade-up">
+              <div className="cards service-cards">
+                <article className="card service-card fade-up">
                   <div className="service-image">
                     <img src="/assets/services/basic-bath.png" alt="基础洗护服务图片：小狗泡泡浴、毛巾和低敏清洁用品" />
                   </div>
+                  <span className="service-kicker">日常养护</span>
                   <h3>基础洗护</h3>
-                  <p>包含梳毛开结、深层清洁、吹干拉毛、指甲修剪、耳道清洁与爪垫护理。</p>
+                  <p>包含梳毛开结、深层清洁、吹干拉毛、指甲修剪、耳道清洁与爪垫护理，适合 2-4 周一次的日常清洁。</p>
                   <div className="pill-list">
                     <span className="pill">小型犬/猫适用</span>
                     <span className="pill">低敏配方</span>
                     <span className="pill">全程可视</span>
                   </div>
+                  <div className="service-meta">
+                    <span>约 60-90 分钟</span>
+                    <strong>¥88 起</strong>
+                  </div>
                 </article>
-                <article className="card fade-up">
+                <article className="card service-card fade-up">
                   <div className="service-image">
                     <img src="/assets/services/beauty-styling.png" alt="美容造型服务图片：宠物修剪造型、剪刀和梳子" />
                   </div>
+                  <span className="service-kicker">精致上镜</span>
                   <h3>美容造型</h3>
                   <p>按宠物体态、毛量与品种定制修剪方案，适合贵宾、比熊、博美等需要造型管理的孩子。</p>
                   <div className="pill-list">
@@ -131,17 +137,77 @@ export default function Home() {
                     <span className="pill">面部精修</span>
                     <span className="pill">蓬松塑形</span>
                   </div>
+                  <div className="service-meta">
+                    <span>约 90-150 分钟</span>
+                    <strong>¥168 起</strong>
+                  </div>
                 </article>
-                <article className="card fade-up">
+                <article className="card service-card fade-up">
                   <div className="service-image">
                     <img src="/assets/services/coat-care.png" alt="皮毛护理服务图片：长毛猫草本护理、梳毛和护毛用品" />
                   </div>
+                  <span className="service-kicker">敏感友好</span>
                   <h3>皮毛护理</h3>
                   <p>提供去油舒缓、草本除味、深层护毛和换季掉毛管理，尤其适合敏感皮肤与长毛宠物。</p>
                   <div className="pill-list">
                     <span className="pill">舒敏镇静</span>
                     <span className="pill">掉毛管理</span>
                     <span className="pill">毛发柔亮</span>
+                  </div>
+                  <div className="service-meta">
+                    <span>约 80-120 分钟</span>
+                    <strong>¥128 起</strong>
+                  </div>
+                </article>
+                <article className="card service-card fade-up">
+                  <div className="service-image">
+                    <img src="/assets/services/service-triptych.png" alt="宠物综合护理服务图片：洗护、吹毛和造型护理组合画面" />
+                  </div>
+                  <span className="service-kicker">新客安心</span>
+                  <h3>幼宠适应洗</h3>
+                  <p>为首次到店或胆小幼宠安排低刺激水温、短时分段吹风和零食安抚，帮助建立洗护安全感。</p>
+                  <div className="pill-list">
+                    <span className="pill">首次到店</span>
+                    <span className="pill">轻柔安抚</span>
+                    <span className="pill">节奏更慢</span>
+                  </div>
+                  <div className="service-meta">
+                    <span>约 50-80 分钟</span>
+                    <strong>¥98 起</strong>
+                  </div>
+                </article>
+                <article className="card service-card fade-up">
+                  <div className="service-image">
+                    <img src="/assets/services/basic-bath.png" alt="老年宠物洗护服务图片：温和清洁用品和柔软毛巾" />
+                  </div>
+                  <span className="service-kicker">年长宠物</span>
+                  <h3>长者温和护理</h3>
+                  <p>针对老年犬猫的体力和关节状态调整站立时长，减少等待和噪音刺激，清洁过程更稳妥。</p>
+                  <div className="pill-list">
+                    <span className="pill">减少久站</span>
+                    <span className="pill">温和吹干</span>
+                    <span className="pill">状态观察</span>
+                  </div>
+                  <div className="service-meta">
+                    <span>约 70-110 分钟</span>
+                    <strong>¥118 起</strong>
+                  </div>
+                </article>
+                <article className="card service-card fade-up">
+                  <div className="service-image">
+                    <img src="/assets/services/coat-care.png" alt="宠物局部护理服务图片：爪垫、耳道和口周清洁用品" />
+                  </div>
+                  <span className="service-kicker">局部加护</span>
+                  <h3>精细护理加项</h3>
+                  <p>可单独预约口周修整、脚底毛修剪、爪垫滋润、泪痕清洁和耳道护理，适合两次洗护之间补状态。</p>
+                  <div className="pill-list">
+                    <span className="pill">局部清洁</span>
+                    <span className="pill">快速到店</span>
+                    <span className="pill">灵活搭配</span>
+                  </div>
+                  <div className="service-meta">
+                    <span>约 15-30 分钟</span>
+                    <strong>¥29 起</strong>
                   </div>
                 </article>
               </div>
@@ -280,37 +346,39 @@ export default function Home() {
                   <p>真实门店落地页常见的信任区块。这里先帮你放入高质量示例文案，后续替换成真实评价就行。</p>
                 </div>
               </div>
-              <div className="testimonial-grid">
-                <article className="testimonial fade-up">
-                  <p>“我家比熊以前很怕吹风，这家会先安抚再慢慢吹，洗完蓬松得像一团云，回家还一直香香的。”</p>
-                  <div className="person">
-                    <div className="avatar">🐩</div>
-                    <div>
-                      <strong>林女士 · 奶盖妈妈</strong>
-                      <span>常规洗护用户</span>
-                    </div>
-                  </div>
-                </article>
-                <article className="testimonial fade-up">
-                  <p>“猫咪洗澡最怕应激，这里分区很安静，店员会提前说明每一步，洗完耳朵和脚垫都处理得很细。”</p>
-                  <div className="person">
-                    <div className="avatar">🐈</div>
-                    <div>
-                      <strong>周先生 · 糯米爸爸</strong>
-                      <span>猫咪舒缓洗护用户</span>
-                    </div>
-                  </div>
-                </article>
-                <article className="testimonial fade-up">
-                  <p>“修毛不只看整不整齐，而是真的有审美。脸型和耳朵都修得特别精神，拍照像换了一只小狗。”</p>
-                  <div className="person">
-                    <div className="avatar">📸</div>
-                    <div>
-                      <strong>陈小姐 · 七喜主人</strong>
-                      <span>造型修剪用户</span>
-                    </div>
-                  </div>
-                </article>
+              <div className="testimonial-carousel fade-up" aria-label="客户评价轮播">
+                <div className="testimonial-track">
+                  {[
+                    ["🐩", "林女士 · 奶盖妈妈", "常规洗护用户", "我家比熊以前很怕吹风，这家会先安抚再慢慢吹，洗完蓬松得像一团云，回家还一直香香的。"],
+                    ["🐈", "周先生 · 糯米爸爸", "猫咪舒缓洗护用户", "猫咪洗澡最怕应激，这里分区很安静，店员会提前说明每一步，洗完耳朵和脚垫都处理得很细。"],
+                    ["📸", "陈小姐 · 七喜主人", "造型修剪用户", "修毛不只看整不整齐，而是真的有审美。脸型和耳朵都修得特别精神，拍照像换了一只小狗。"],
+                    ["🛁", "吴女士 · 豆包姐姐", "幼宠适应洗用户", "第一次洗澡本来很担心，美容师一直蹲下来陪它熟悉环境，没有硬来，结束后还发了护理建议。"],
+                    ["✨", "许先生 · 阿福主人", "皮毛护理用户", "换季掉毛很严重，做完护理后毛顺了很多，梳下来的浮毛也少了，家里沙发终于轻松一点。"],
+                    ["🧴", "赵小姐 · 米粒妈妈", "敏感肌护理用户", "之前在别处洗完会抓痒，这次用了低敏方案，回家观察两天都很稳定，店员回访也很认真。"],
+                    ["✂️", "梁先生 · 可乐爸爸", "局部护理用户", "临时约了脚底毛和爪垫护理，速度快但不敷衍，走路打滑的问题改善很明显。"],
+                    ["💛", "何女士 · 元宝主人", "长者温和护理用户", "我家狗狗年纪大了不能站太久，这里会让它休息，吹干也很耐心，整个过程让人放心。"],
+                  ].concat([
+                    ["🐩", "林女士 · 奶盖妈妈", "常规洗护用户", "我家比熊以前很怕吹风，这家会先安抚再慢慢吹，洗完蓬松得像一团云，回家还一直香香的。"],
+                    ["🐈", "周先生 · 糯米爸爸", "猫咪舒缓洗护用户", "猫咪洗澡最怕应激，这里分区很安静，店员会提前说明每一步，洗完耳朵和脚垫都处理得很细。"],
+                    ["📸", "陈小姐 · 七喜主人", "造型修剪用户", "修毛不只看整不整齐，而是真的有审美。脸型和耳朵都修得特别精神，拍照像换了一只小狗。"],
+                    ["🛁", "吴女士 · 豆包姐姐", "幼宠适应洗用户", "第一次洗澡本来很担心，美容师一直蹲下来陪它熟悉环境，没有硬来，结束后还发了护理建议。"],
+                    ["✨", "许先生 · 阿福主人", "皮毛护理用户", "换季掉毛很严重，做完护理后毛顺了很多，梳下来的浮毛也少了，家里沙发终于轻松一点。"],
+                    ["🧴", "赵小姐 · 米粒妈妈", "敏感肌护理用户", "之前在别处洗完会抓痒，这次用了低敏方案，回家观察两天都很稳定，店员回访也很认真。"],
+                    ["✂️", "梁先生 · 可乐爸爸", "局部护理用户", "临时约了脚底毛和爪垫护理，速度快但不敷衍，走路打滑的问题改善很明显。"],
+                    ["💛", "何女士 · 元宝主人", "长者温和护理用户", "我家狗狗年纪大了不能站太久，这里会让它休息，吹干也很耐心，整个过程让人放心。"],
+                  ]).map(([avatar, name, tag, quote], index) => (
+                    <article className="testimonial" key={`${name}-${index}`} aria-hidden={index >= 8}>
+                      <p>“{quote}”</p>
+                      <div className="person">
+                        <div className="avatar">{avatar}</div>
+                        <div>
+                          <strong>{name}</strong>
+                          <span>{tag}</span>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
