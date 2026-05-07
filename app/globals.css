@@ -767,8 +767,62 @@
       margin-bottom: 4px;
     }
 
-    .map-preview {
+    .store-visual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.9fr);
+      gap: 14px;
       margin-top: 14px;
+    }
+
+    .store-photo {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(37, 50, 56, 0.08);
+      background: #f5f1e8;
+      aspect-ratio: 16 / 9;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+    }
+
+    .store-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .store-photo figcaption {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(37, 50, 56, 0.72);
+      font-size: 12px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .store-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .store-highlights span {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(244, 127, 82, 0.1);
+      color: var(--primary-deep);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .map-preview {
       overflow: hidden;
       border-radius: 16px;
       border: 1px solid rgba(37, 50, 56, 0.08);
@@ -890,6 +944,7 @@
       .cards,
       .pricing,
       .steps,
+      .store-visual-grid,
       .hero-points,
       .form-row,
       .mini-grid {
