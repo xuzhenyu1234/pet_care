@@ -329,8 +329,19 @@ export default function Home() {
                   <div className="info-item">
                     <strong>门店地址</strong>
                     <span>湖北省武汉市 武汉大学校内</span>
-                    <div className="map-preview" aria-label="武汉大学校内地图示意图">
-                      <img src="/assets/wuhan-university-amap-style.svg" alt="高德地图风格的武汉大学校内位置示意图" />
+                    <div className="store-visual-grid">
+                      <figure className="store-photo">
+                        <img src="/assets/store/store-interior.png" alt="汪喵泡泡屋门店实景，包含前台、玻璃洗护间和等候休息区" />
+                        <figcaption>AI 生成门店实景图</figcaption>
+                      </figure>
+                      <div className="map-preview" aria-label="武汉大学校内地图示意图">
+                        <img src="/assets/wuhan-university-amap-style.svg" alt="高德地图风格的武汉大学校内位置示意图" />
+                      </div>
+                    </div>
+                    <div className="store-highlights">
+                      <span>独立玻璃洗护间</span>
+                      <span>低刺激等候区</span>
+                      <span>前台接待可视化</span>
                     </div>
                   </div>
                   <div className="info-item">
