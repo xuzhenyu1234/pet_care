@@ -361,7 +361,11 @@ export default function Home() {
                       <option>洗护加造型</option>
                     </select>
                   </div>
-                  <textarea rows={5} placeholder="宠物体型、毛发情况、想预约的时间段等"></textarea>
+                  <label className="time-field">
+                    <span>期望到店时间</span>
+                    <input type="datetime-local" aria-label="期望到店时间" />
+                  </label>
+                  <textarea rows={5} placeholder="宠物体型、毛发情况、其他护理需求等"></textarea>
                   <button className="button button-primary" type="button" id="bookingButton" onClick={handleBookingClick}>发送预约意向</button>
                 </form>
               </div>

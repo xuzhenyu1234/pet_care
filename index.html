@@ -718,6 +718,19 @@
       box-shadow: 0 0 0 4px rgba(244, 127, 82, 0.08);
     }
 
+    .time-field {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .time-field input {
+      color: var(--text);
+      font-weight: 500;
+    }
+
     .form-row {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1156,7 +1169,11 @@
                 <option>洗护加造型</option>
               </select>
             </div>
-            <textarea rows="5" placeholder="宠物体型、毛发情况、想预约的时间段等"></textarea>
+            <label class="time-field">
+              <span>期望到店时间</span>
+              <input type="datetime-local" aria-label="期望到店时间">
+            </label>
+            <textarea rows="5" placeholder="宠物体型、毛发情况、其他护理需求等"></textarea>
             <button class="button button-primary" type="button" id="bookingButton">发送预约意向</button>
           </form>
         </div>
