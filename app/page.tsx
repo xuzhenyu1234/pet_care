@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import type { FormEvent } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [bookingStatus, setBookingStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [bookingMessage, setBookingMessage] = useState("");
+
   useEffect(() => {
     const revealItems = document.querySelectorAll(".fade-up");
     const observer = new IntersectionObserver(
@@ -22,8 +26,45 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const handleBookingClick = () => {
-    alert("预约意向已记录。\n这是静态演示页面，后续可以继续接入表单提交、微信或电话预约。");
+  const handleBookingSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      customerName: String(formData.get("customerName") || ""),
+      customerPhone: String(formData.get("customerPhone") || ""),
+      petType: String(formData.get("petType") || ""),
+      serviceItem: String(formData.get("serviceItem") || ""),
+      arrivalTime: String(formData.get("arrivalTime") || ""),
+      notes: String(formData.get("notes") || ""),
+    };
+
+    setBookingStatus("submitting");
+    setBookingMessage("");
+
+    try {
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || "预约提交失败，请稍后再试。");
+      }
+
+      form.reset();
+      setBookingStatus("success");
+      setBookingMessage("预约意向已收到，我们会尽快联系你确认到店时间。");
+    } catch (error) {
+      setBookingStatus("error");
+      setBookingMessage(error instanceof Error ? error.message : "预约提交失败，请稍后再试。");
+    }
   };
 
   const defaultArrivalTime = (() => {
@@ -432,30 +473,37 @@ export default function Home() {
               <div className="contact-card fade-up">
                 <span className="eyebrow">在线预约</span>
                 <h2>提交护理需求</h2>
-                <form className="booking-form">
+                <form className="booking-form" onSubmit={handleBookingSubmit}>
                   <div className="form-row">
-                    <input type="text" placeholder="你的称呼" />
-                    <input type="tel" placeholder="联系电话" />
+                    <input type="text" name="customerName" placeholder="你的称呼" autoComplete="name" required />
+                    <input type="tel" name="customerPhone" placeholder="联系电话" autoComplete="tel" required />
                   </div>
                   <div className="form-row">
-                    <select>
-                      <option>选择宠物类型</option>
-                      <option>狗狗</option>
-                      <option>猫咪</option>
+                    <select name="petType" defaultValue="" required>
+                      <option value="" disabled>选择宠物类型</option>
+                      <option value="dog">狗狗</option>
+                      <option value="cat">猫咪</option>
                     </select>
-                    <select>
-                      <option>选择服务项目</option>
-                      <option>基础洗护</option>
-                      <option>深层护理</option>
-                      <option>洗护加造型</option>
+                    <select name="serviceItem" defaultValue="" required>
+                      <option value="" disabled>选择服务项目</option>
+                      <option value="basic_bath">基础洗护</option>
+                      <option value="deep_care">深层护理</option>
+                      <option value="bath_and_styling">洗护加造型</option>
                     </select>
                   </div>
                   <label className="time-field">
                     <span>期望到店时间</span>
-                    <input type="datetime-local" aria-label="期望到店时间" defaultValue={defaultArrivalTime} />
+                    <input type="datetime-local" name="arrivalTime" aria-label="期望到店时间" defaultValue={defaultArrivalTime} required />
                   </label>
-                  <textarea rows={5} placeholder="宠物体型、毛发情况、其他护理需求等"></textarea>
-                  <button className="button button-primary" type="button" id="bookingButton" onClick={handleBookingClick}>发送预约意向</button>
+                  <textarea name="notes" rows={5} maxLength={1000} placeholder="宠物体型、毛发情况、其他护理需求等"></textarea>
+                  <button className="button button-primary" type="submit" id="bookingButton" disabled={bookingStatus === "submitting"}>
+                    {bookingStatus === "submitting" ? "提交中..." : "发送预约意向"}
+                  </button>
+                  {bookingMessage ? (
+                    <p className={`form-status ${bookingStatus === "error" ? "form-status-error" : "form-status-success"}`} role="status">
+                      {bookingMessage}
+                    </p>
+                  ) : null}
                 </form>
               </div>
             </div>
