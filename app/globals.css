@@ -143,6 +143,12 @@
       transform: translateY(-2px);
     }
 
+    .button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+      transform: none;
+    }
+
     .button-primary {
       color: #fff;
       background: linear-gradient(135deg, var(--primary), #ff9c66);
@@ -874,6 +880,26 @@
     .time-field input {
       color: var(--text);
       font-weight: 500;
+    }
+
+    .form-status {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form-status-success {
+      color: #1f6f64;
+      background: rgba(47, 157, 143, 0.12);
+      border: 1px solid rgba(47, 157, 143, 0.22);
+    }
+
+    .form-status-error {
+      color: #b24728;
+      background: rgba(244, 127, 82, 0.12);
+      border: 1px solid rgba(244, 127, 82, 0.24);
     }
 
     .form-row {
