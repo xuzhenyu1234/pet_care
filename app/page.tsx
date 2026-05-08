@@ -26,6 +26,16 @@ export default function Home() {
     alert("预约意向已记录。\n这是静态演示页面，后续可以继续接入表单提交、微信或电话预约。");
   };
 
+  const defaultArrivalTime = (() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    date.setHours(9, 30, 0, 0);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}T09:30`;
+  })();
+
   return (
     <>
       <header className="topbar">
@@ -442,7 +452,7 @@ export default function Home() {
                   </div>
                   <label className="time-field">
                     <span>期望到店时间</span>
-                    <input type="datetime-local" aria-label="期望到店时间" />
+                    <input type="datetime-local" aria-label="期望到店时间" defaultValue={defaultArrivalTime} />
                   </label>
                   <textarea rows={5} placeholder="宠物体型、毛发情况、其他护理需求等"></textarea>
                   <button className="button button-primary" type="button" id="bookingButton" onClick={handleBookingClick}>发送预约意向</button>
